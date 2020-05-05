@@ -10,7 +10,7 @@ class MainMenuHandler(Handler):
             [
                 {
                     "image_id": '1030494/ae247b496dbf582fa5da',
-                    "title": None,  # Не обязательно передавать текст в заголовок
+                    "title": None,
                     "description": "Описание картинки, которое тоже не обязательно",
                     "button": {
                         'text': 'Текст кнопки',
