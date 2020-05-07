@@ -1,42 +1,31 @@
+from skill.texts.texts import get_dynamic_text as d, MAIN_MENU, CHOOSE_GAME
 from skill.handlers.handler import Handler
-from aioalice.types import MediaButton, CardFooter, Image
+from aioalice.types import MediaButton, Image
 
 
 class MainMenuHandler(Handler):
     async def handle(self, alice_request):
         return alice_request.response_items_list(
-            'Вот альбом изображений',
-            'Это текст заголовка, который будет над списком изображений',
-            [
-                {
-                    "image_id": '1030494/ae247b496dbf582fa5da',
-                    "title": None,
-                    "description": "Описание картинки, которое тоже не обязательно",
-                    "button": {
-                        'text': 'Текст кнопки',
-                        'url': 'https://github.com',
-                        'payload': {'some': 'payload'}
-                    }
-                },
-                {
-                    "image_id": '1030494/ef2851808ff247bf5ad8',
-                    "title": 'Заголовок картинки',
-                    "description": None,
-                    "button": MediaButton('Текст кнопки', 'https://google.ru', {'this_is': 'payload'})
-                },
-                Image('965417/5866b7a040d264f111c6',
-                      'Заголовок изображения',
-                      'Описание изображения',
-                      MediaButton('Текст кнопки', None))
-            ],
-            CardFooter(
-                'Текст футера (под списком изображений)',
-                MediaButton('Текст кнопки', 'https://example.com')
-            )
+            text=d(MAIN_MENU),
+            header=CHOOSE_GAME,
+            items=[
+                Image('1540737/1c2ce7cc72e3b9c1b0aa',
+                      'Веселый поход',
+                      'Собери вещи в поход и отправься в виртуальную экскурсию по лесу!',
+                      MediaButton('Веселый поход', None)),
+                Image('965417/d574f5b123b1a3907ef0',
+                      'Создай персонажа',
+                      'Учимся различать предметы и смотрим, как их использовать =)',
+                      MediaButton('Создай персонажа', None)),
+                Image('1540737/5bc4c807098457bc0383',
+                      'Угадай профессию',
+                      'Проверь, насколько хорошо ты знаешь профессии!',
+                      MediaButton('Угадай профессию', None))
+            ]
         )
 
     def register_handlers(self):
         self.dispatcher.register_request_handler(
             self.handle,
-            func=lambda areq: areq.session.new
+            func=lambda req: req.session.new
         )
