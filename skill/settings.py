@@ -1,6 +1,6 @@
 import os
 
-from skill.handlers import LoggingHandler, MainMenuHandler, ErrorHandler, UnknownCommandHandler
+from skill.handlers import LoggingHandler, MainMenuHandler, ErrorHandler, UnknownCommandHandler, TripGameHandler
 
 WEBHOOK_URL_PATH = '/webhook/'
 WEBAPP_HOST = 'localhost'
@@ -10,6 +10,7 @@ HANDLERS = [
     LoggingHandler,
 
     MainMenuHandler,
+    TripGameHandler,
 
     ErrorHandler,
     UnknownCommandHandler,
