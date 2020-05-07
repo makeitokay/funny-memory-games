@@ -6,7 +6,7 @@ from skill.logger import Logger
 class Handler(ABC):
     def __init__(self, dispatcher):
         self.dispatcher = dispatcher
-        self.logger = Logger().logger
+        self.logger = Logger()
 
     @abstractmethod
     def register_handlers(self):
