@@ -130,3 +130,6 @@ dmypy.json
 
 # Logs
 skill/logs
+
+# IDE files
+.idea
