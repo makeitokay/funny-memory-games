@@ -51,7 +51,7 @@ def get_dynamic_text(text, **game_elements):
 # Main menu texts
 
 GREETINGS = '''
-{greetings}! Рад тебя видеть! 
+{greetings}! Я и Запоминайка очень рады тебя видеть! 
 Поиграем во-что нибудь? Нажми на любую игру и я расскажу тебе правила!
 '''
 
@@ -69,6 +69,10 @@ TRIP_GAME_START = '''
 
 TRIP_GAME_CHOOSE_THING = '''
 {ok}! {trip_asking} какой из этих предметов {category}?
+'''
+
+TRIP_USE_BUTTONS = '''
+Пожалуйста, используй кнопки, которые я показала тебе в сообщении выше. 
 '''
 
 TRIP_WRONG_ANSWER = '''

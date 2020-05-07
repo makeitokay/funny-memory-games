@@ -1,7 +1,8 @@
 from aioalice.types import RequestType
 
 from skill import settings
-from skill.texts.texts import get_dynamic_text as d, TRIP_GAME_CHOOSE_THING, TRIP_QUIZ_FINISH, TRIP_WRONG_ANSWER
+from skill.texts.texts import get_dynamic_text as d, TRIP_GAME_CHOOSE_THING, TRIP_QUIZ_FINISH, TRIP_WRONG_ANSWER, \
+    TRIP_USE_BUTTONS
 from skill.states import TripGameStates
 from skill.utils.trip_game_utils import get_random_question, generate_answers_suggests
 from skill.handlers.handler import Handler
@@ -49,6 +50,8 @@ class TripGameHandler(Handler):
             d(TRIP_WRONG_ANSWER, category=payload.get('category')),
         )
 
+    async def no_button_pressed_handle(self, alice_request):
+        return alice_request.response(TRIP_USE_BUTTONS)
 
     def register_handlers(self):
         self.dispatcher.register_request_handler(
@@ -59,4 +62,8 @@ class TripGameHandler(Handler):
             self.quiz_process_handle,
             state=TripGameStates.TRIP_GAME_QUIZ,
             request_type=RequestType.BUTTON_PRESSED
+        )
+        self.dispatcher.register_request_handler(
+            self.no_button_pressed_handle,
+            state=TripGameStates.TRIP_GAME_QUIZ,
         )
