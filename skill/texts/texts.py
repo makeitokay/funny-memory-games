@@ -28,14 +28,21 @@ _TEXT_VARIABLES = {
         "ОК",
         "Класс",
         "Чудно",
-    ]
+    ],
+    "trip_asking": [
+        "Подскажи, пожалуйста,",
+        "Как ты думаешь,",
+    ],
 }
 
 
-def get_dynamic_text(text):
+def get_dynamic_text(text, **game_elements):
     phrases = {}
     for k, variables in _TEXT_VARIABLES.items():
         phrases[k] = random.choice(variables)
+    if game_elements is not None:
+        phrases.update(game_elements)
+
     if isinstance(text, str):
         return text.format(**phrases)
     return SpeechText(text.text.format(**phrases), text.tts.format(**phrases))
@@ -58,4 +65,16 @@ CHOOSE_GAME = 'Выбери одну из игр ниже.'
 
 TRIP_GAME_START = '''
 {ok}, отправляемся в поход! Но для начала нам нужно собрать вещи. Поможешь мне в этом?
+'''
+
+TRIP_GAME_CHOOSE_THING = '''
+{ok}! {trip_asking} какой из этих предметов {category}?
+'''
+
+TRIP_WRONG_ANSWER = '''
+Хм, нет, на самом деле этот предмет {category}. Попробуй ещё раз.
+'''
+
+TRIP_QUIZ_FINISH = '''
+Ура! Все вещи собраны и мы можем отправиться в поход! Готов к приключению?
 '''

@@ -1,3 +1,4 @@
+from skill import settings
 from skill.texts.texts import get_dynamic_text as d, MAIN_MENU, CHOOSE_GAME, GREETINGS, TRIP_GAME_START
 from skill.handlers.handler import Handler
 from skill.states import MainMenuStates, TripGameStates
@@ -33,7 +34,6 @@ class MainMenuHandler(Handler):
         )
 
     async def handle_back_to_menu(self, alice_request):
-        print(1)
         user_id = alice_request.session.user_id
         await self.dispatcher.storage.set_state(user_id, MainMenuStates.SELECT_GAME)
         return alice_request.response_items_list(

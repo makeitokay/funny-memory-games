@@ -20,3 +20,5 @@ ROOT_DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 
 LOGGER_NAME = 'skill'
 LOGGING_PATH = os.path.join(ROOT_DIR_PATH, 'logs')
+
+TRIP_GAME_QUESTIONS = 5

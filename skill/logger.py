@@ -10,10 +10,10 @@ class Logger:
         self._logger.setLevel(logging.DEBUG)
         if not self._logger.handlers:
             filename = os.path.join(settings.LOGGING_PATH, f'{settings.LOGGER_NAME}.log')
-            handler = logging.handlers.TimedRotatingFileHandler(filename, when='midnight', backupCount=15)
-            formatter = logging.Formatter(
-                u'%(filename)s [LINE:%(lineno)d] #%(levelname)-8s [%(asctime)s]  %(message)s'
+            handler = logging.handlers.TimedRotatingFileHandler(
+                filename, when='midnight', backupCount=15
             )
+            formatter = logging.Formatter(u'[%(asctime)s]  %(message)s')
             handler.setFormatter(formatter)
             handler.setLevel(logging.DEBUG)
             self._logger.addHandler(handler)
@@ -26,5 +26,5 @@ class Logger:
 
     def log_request(self, alice_request):
         user_id = alice_request.session.user_id
-        message = alice_request.request.original_utterance
-        self.log(f'New request from {user_id[:16]} "{message}"')
+        message = alice_request.request.command
+        self.log(f'New request from {user_id[:16]} "{alice_request}"')
