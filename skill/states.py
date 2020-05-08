@@ -12,4 +12,6 @@ class TripGameStates(Helper):
 
     TRIP_GAME_START = Item()
     TRIP_GAME_QUIZ = Item()
+    TRIP_EXCURSION_START = Item()
     TRIP_GAME_EXCURSION = Item()
+    TRIP_GAME_END = Item()

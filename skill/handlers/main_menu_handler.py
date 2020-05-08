@@ -36,6 +36,7 @@ class MainMenuHandler(Handler):
     async def handle_back_to_menu(self, alice_request):
         user_id = alice_request.session.user_id
         await self.dispatcher.storage.set_state(user_id, MainMenuStates.SELECT_GAME)
+        await self.dispatcher.storage.set_data(user_id, data={})
         return alice_request.response_items_list(
             text=MAIN_MENU,
             header=CHOOSE_GAME,
@@ -53,7 +54,8 @@ class MainMenuHandler(Handler):
     def register_handlers(self):
         self.dispatcher.register_request_handler(
             self.handle_greetings,
-            func=lambda req: req.session.new
+            func=lambda req: req.session.new,
+            state="*"
         )
         self.dispatcher.register_request_handler(
             self.handle_back_to_menu,
@@ -62,6 +64,6 @@ class MainMenuHandler(Handler):
         )
         self.dispatcher.register_request_handler(
             self.handle_select_trip_game,
-            state=MainMenuStates.SELECT_GAME,
+            state=[MainMenuStates.SELECT_GAME, TripGameStates.TRIP_GAME_END],
             contains=self.TRIP_GAME_SELECT_KEYWORDS
         )

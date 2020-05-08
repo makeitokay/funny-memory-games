@@ -9,9 +9,10 @@ class SpeechText:
             self.tts = self.text
 
     def add_sound(self, sound):
-        if len(self.tts + sound.tts) > 1024:
+        sound_wrapper = f"<speaker audio='{sound}'>"
+        if len(self.tts + sound_wrapper) > 1024:
             raise ValueError('It impossible to add this sound because of size of tts attribute.')
-        self.tts = sound.tts + self.tts
+        self.tts = sound_wrapper + self.tts
 
 
 _TEXT_VARIABLES = {
@@ -81,4 +82,8 @@ TRIP_WRONG_ANSWER = '''
 
 TRIP_QUIZ_FINISH = '''
 Ура! Все вещи собраны и мы можем отправиться в поход! Готов к приключению?
+'''
+
+TRIP_GAME_END = '''
+Вот и подошло наше путешествие к концу. Хочешь попробовать еще раз?
 '''

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Лес",
+    "text": "Мы в лесу! Идем дальше?",
+    "sound": "alice-sounds-nature-forest-1.opus",
+    "image": "1030494/2109d997e94aefc179e9"
+  },
+  {
+    "name": "Кукушка",
+    "text": "По пути мы встретили кукушку!",
+    "sound": "alice-sounds-animals-cuckoo-1.opus",
+    "image": "1652229/1c5b96e9cbf03a859e13"
+  },
+  {
+    "name": "Лошадь",
+    "text": "Рядом пробежала лошадь!",
+    "sound": "alice-sounds-animals-horse-1.opus",
+    "image": "965417/44b67df482112190559f"
+  },
+  {
+    "name": "Лягушка",
+    "text": "Слышишь эти звуки? Это же лягушка!",
+    "sound": "alice-sounds-animals-frog-1.opus",
+    "image": "1540737/1f86235394f1fead94a1"
+  },
+  {
+    "name": "Слон",
+    "text": "Мы встретили слонят!",
+    "sound": "alice-sounds-animals-elephant-1.opus",
+    "image": "965417/5ba3de46887e35d17966"
+  }
+]
