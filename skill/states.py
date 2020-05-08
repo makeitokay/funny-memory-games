@@ -10,8 +10,6 @@ class MainMenuStates(Helper):
 class TripGameStates(Helper):
     mode = HelperMode.snake_case
 
-    TRIP_GAME_START = Item()
     TRIP_GAME_QUIZ = Item()
-    TRIP_EXCURSION_START = Item()
     TRIP_GAME_EXCURSION = Item()
     TRIP_GAME_END = Item()

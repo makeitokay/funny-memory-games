@@ -6,35 +6,33 @@ from aioalice.types import Button
 from skill import settings
 
 
-def get_random_question(exclude_categories=None):
-    if exclude_categories is None:
-        exclude_categories = []
+def get_random_questions():
     with open('skill/assets/trip_game_words.json', encoding='utf-8') as f:
         data = list(json.load(f).items())
 
-    right_category = random.choice(data)
-    while right_category[0] in exclude_categories:
-        right_category = random.choice(data)
-    right_answer = (right_category[0], random.choice(right_category[1]))
-
-    variables = []
-    for i in range(3):
-        wrong_category = random.choice(data)
-        while wrong_category[0] == right_category[0]:
-            wrong_category = random.choice(data)
-        wrong_answer = (wrong_category[0], random.choice(wrong_category[1]))
-        while wrong_answer[1] == right_answer[1] or wrong_answer in variables:
-            wrong_answer = (wrong_category[0], random.choice(wrong_category[1]))
-        variables.append(wrong_answer)
-    return variables, right_answer
+    results = []
+    right_answers = random.sample(data, k=5)
+    for category, variables in right_answers:
+        answer = random.choice(variables)
+        wrong_variables = []
+        for _ in range(3):
+            wrong_items = random.choice(data)
+            while wrong_items[0] == category:  # wrong_items[0] is a category
+                wrong_items = random.choice(data)
+            wrong_answer = random.choice(wrong_items[1])
+            while any(wrong_answer == item[1] for item in wrong_variables):
+                wrong_answer = random.choice(wrong_items[1])
+            wrong_variables.append((wrong_items[0], wrong_answer))
+        results.append((wrong_variables, (category, answer)))
+    return iter(results)
 
 
 def generate_answers_suggests(variables, right_answer):
     buttons = [
-        Button(name, payload={"category": category, "right": False}, hide=False)
+        Button(name, payload={"category": category, "right": False})
         for category, name in variables
     ]
-    buttons.append(Button(right_answer[1], payload={"category": right_answer[0], "right": True}, hide=False))
+    buttons.append(Button(right_answer[1], payload={"category": right_answer[0], "right": True}))
     random.shuffle(buttons)
     return buttons
 

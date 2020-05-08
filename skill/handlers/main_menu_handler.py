@@ -27,6 +27,7 @@ class MainMenuHandler(Handler):
     async def handle_greetings(self, alice_request):
         user_id = alice_request.session.user_id
         await self.dispatcher.storage.set_state(user_id, MainMenuStates.SELECT_GAME)
+        await self.dispatcher.storage.reset_data(user_id)
         return alice_request.response_items_list(
             text=d(GREETINGS),
             header=CHOOSE_GAME,
@@ -36,7 +37,7 @@ class MainMenuHandler(Handler):
     async def handle_back_to_menu(self, alice_request):
         user_id = alice_request.session.user_id
         await self.dispatcher.storage.set_state(user_id, MainMenuStates.SELECT_GAME)
-        await self.dispatcher.storage.set_data(user_id, data={})
+        await self.dispatcher.storage.reset_data(user_id)
         return alice_request.response_items_list(
             text=MAIN_MENU,
             header=CHOOSE_GAME,
@@ -45,7 +46,8 @@ class MainMenuHandler(Handler):
 
     async def handle_select_trip_game(self, alice_request):
         user_id = alice_request.session.user_id
-        await self.dispatcher.storage.set_state(user_id, TripGameStates.TRIP_GAME_START)
+        await self.dispatcher.storage.set_state(user_id, TripGameStates.TRIP_GAME_QUIZ)
+        await self.dispatcher.storage.reset_data(user_id)
         return alice_request.response(
             d(TRIP_GAME_START),
             buttons=[Button("Да!")]
