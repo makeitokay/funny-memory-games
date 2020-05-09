@@ -6,7 +6,7 @@ from aioalice.types import Button
 from skill import settings
 
 
-def get_random_questions():
+async def get_random_questions():
     with open('skill/assets/trip_game_words.json', encoding='utf-8') as f:
         data = list(json.load(f).items())
 
@@ -27,7 +27,7 @@ def get_random_questions():
     return iter(results)
 
 
-def generate_answers_suggests(variables, right_answer):
+async def generate_answers_suggests(variables, right_answer):
     buttons = [
         Button(name, payload={"category": category, "right": False})
         for category, name in variables
@@ -37,7 +37,7 @@ def generate_answers_suggests(variables, right_answer):
     return buttons
 
 
-def get_random_locations():
+async def get_random_locations():
     with open('skill/assets/trip_game_locations.json', encoding='utf-8') as f:
         data = list(json.load(f))
     # data[0] is forest location. It is the first location by default

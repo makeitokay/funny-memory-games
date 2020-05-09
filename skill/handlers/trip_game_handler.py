@@ -18,14 +18,14 @@ class TripGameHandler(Handler):
         if payload.get('right') is not False:
             questions = user_data.get('trip_game_questions')
             if questions is None:
-                questions = get_random_questions()
+                questions = await get_random_questions()
                 await self.dispatcher.storage.update_data(user_id, trip_game_questions=questions)
             try:
                 wrong_variables, right_answer = next(questions)
             except StopIteration:
                 await self.dispatcher.storage.set_state(user_id, TripGameStates.TRIP_GAME_EXCURSION)
                 return alice_request.response(TRIP_QUIZ_FINISH, buttons=['Да!'])
-            suggests = generate_answers_suggests(wrong_variables, right_answer)
+            suggests = await generate_answers_suggests(wrong_variables, right_answer)
             # TODO: Saving suggests to user data storage is a bad idea
             await self.dispatcher.storage.update_data(user_id, trip_game_quiz_suggests=suggests)
             return alice_request.response(
@@ -43,7 +43,7 @@ class TripGameHandler(Handler):
         user_data = await self.get_user_data(user_id)
         locations = user_data.get('trip_game_locations')
         if locations is None:
-            locations = get_random_locations()
+            locations = await get_random_locations()
             await self.dispatcher.storage.update_data(user_id, trip_game_locations=locations)
         try:
             current_location = next(locations)
