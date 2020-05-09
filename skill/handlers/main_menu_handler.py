@@ -1,5 +1,4 @@
-from skill import settings
-from skill.texts.texts import get_dynamic_text as d, MAIN_MENU, CHOOSE_GAME, GREETINGS, TRIP_GAME_START
+from skill.texts import get_dynamic_text as d, MAIN_MENU, CHOOSE_GAME, GREETINGS, TRIP_GAME_START
 from skill.handlers.handler import Handler
 from skill.states import MainMenuStates, TripGameStates
 from aioalice.types import MediaButton, Image, Button

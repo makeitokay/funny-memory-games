@@ -1,4 +1,4 @@
-from skill.texts.texts import get_dynamic_text as d, TRIP_GAME_CHOOSE_THING, TRIP_QUIZ_FINISH, TRIP_WRONG_ANSWER, \
+from skill.texts import get_dynamic_text as d, TRIP_GAME_CHOOSE_THING, TRIP_QUIZ_FINISH, TRIP_WRONG_ANSWER, \
     TRIP_GAME_END, SpeechText
 from skill.states import TripGameStates
 from skill.utils.trip_game_utils import generate_answers_suggests, get_random_locations, \
@@ -17,7 +17,6 @@ class TripGameHandler(Handler):
         payload = alice_request.request.payload or {}
         if payload.get('right') is not False:
             questions = user_data.get('trip_game_questions')
-            self.logger.log(questions)
             if questions is None:
                 questions = get_random_questions()
                 await self.dispatcher.storage.update_data(user_id, trip_game_questions=questions)
@@ -50,7 +49,11 @@ class TripGameHandler(Handler):
             current_location = next(locations)
         except StopIteration:
             await self.dispatcher.storage.set_state(user_id, TripGameStates.TRIP_GAME_END)
-            return alice_request.response(TRIP_GAME_END, buttons=['Хочу в поход!', 'Главное меню'])
+            return alice_request.response(
+                TRIP_GAME_END.text,
+                tts=TRIP_GAME_END.tts,
+                buttons=['Хочу в поход!', 'Главное меню']
+            )
 
         text = SpeechText(current_location['text'])
         text.add_sound(current_location['sound'])
