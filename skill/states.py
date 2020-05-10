@@ -13,3 +13,9 @@ class TripGameStates(Helper):
     TRIP_GAME_QUIZ = Item()
     TRIP_GAME_EXCURSION = Item()
     TRIP_GAME_END = Item()
+
+
+class AntonymsGameStates(Helper):
+    mode = HelperMode.snake_case
+
+    ANTONYMS_GAME = Item()

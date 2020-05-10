@@ -1,6 +1,6 @@
-from skill.texts import get_dynamic_text as d, MAIN_MENU, CHOOSE_GAME, GREETINGS, TRIP_GAME_START
+from skill.texts import get_dynamic_text as d, MAIN_MENU, CHOOSE_GAME, GREETINGS, TRIP_GAME_START, ANTONYMS_GAME_START
 from skill.handlers.handler import Handler
-from skill.states import MainMenuStates, TripGameStates
+from skill.states import MainMenuStates, TripGameStates, AntonymsGameStates
 from aioalice.types import MediaButton, Image, Button
 
 
@@ -10,10 +10,10 @@ class MainMenuHandler(Handler):
               'Веселый поход',
               'Собери вещи в поход и отправься в виртуальную экскурсию по лесу!',
               MediaButton('Веселый поход', None)),
-        Image('965417/d574f5b123b1a3907ef0',
-              'Создай персонажа',
-              'Учимся различать предметы и смотрим, как их использовать =)',
-              MediaButton('Создай персонажа', None)),
+        Image('965417/487a2e723f457db73400',
+              'Скажи по-другому',
+              'Подбери антонимы к моим словам!',
+              MediaButton('Скажи по-другому', None)),
         Image('1540737/5bc4c807098457bc0383',
               'Угадай профессию',
               'Проверь, насколько хорошо ты знаешь профессии!',
@@ -22,6 +22,7 @@ class MainMenuHandler(Handler):
 
     BACK_TO_MENU_KEYWORDS = ["Вернуться в меню", "Главное меню", "Другая игра", "В начало"]
     TRIP_GAME_SELECT_KEYWORDS = ["Поход"]
+    ANTONYMS_GAME_SELECT_KEYWORDS = ["по-другому", "по другому", "антоним"]
 
     async def handle_greetings(self, alice_request):
         user_id = alice_request.session.user_id
@@ -52,6 +53,15 @@ class MainMenuHandler(Handler):
             buttons=[Button("Да!")]
         )
 
+    async def handle_select_antonyms_game(self, alice_request):
+        user_id = alice_request.session.user_id
+        await self.dispatcher.storage.set_state(user_id, AntonymsGameStates.ANTONYMS_GAME)
+        await self.dispatcher.storage.reset_data(user_id)
+        return alice_request.response(
+            d(ANTONYMS_GAME_START),
+            buttons=[Button("Да!")]
+        )
+
     def register_handlers(self):
         self.dispatcher.register_request_handler(
             self.handle_greetings,
@@ -67,4 +77,9 @@ class MainMenuHandler(Handler):
             self.handle_select_trip_game,
             state=[MainMenuStates.SELECT_GAME, TripGameStates.TRIP_GAME_END],
             contains=self.TRIP_GAME_SELECT_KEYWORDS
+        )
+        self.dispatcher.register_request_handler(
+            self.handle_select_antonyms_game,
+            state=[MainMenuStates.SELECT_GAME,],
+            contains=self.ANTONYMS_GAME_SELECT_KEYWORDS
         )
