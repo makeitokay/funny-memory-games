@@ -1,6 +1,6 @@
 import os
 
-from skill.handlers import LoggingHandler, MainMenuHandler, ErrorHandler, UnknownCommandHandler, TripGameHandler
+from skill.handlers import LoggingHandler, MainMenuHandler, ErrorHandler, UnknownCommandHandler, TripGameHandler, AntonymsGameHandler
 
 WEBHOOK_URL_PATH = '/webhook/'
 WEBAPP_HOST = 'localhost'
@@ -11,6 +11,7 @@ HANDLERS = [
 
     MainMenuHandler,
     TripGameHandler,
+    AntonymsGameHandler,
 
     ErrorHandler,
     UnknownCommandHandler,
@@ -23,3 +24,5 @@ LOGGING_PATH = os.path.join(ROOT_DIR_PATH, 'logs')
 
 TRIP_GAME_QUESTIONS = 5
 TRIP_EXCURSION_LOCATIONS = 5
+
+ANTONYMS_GAME_QUESTIONS = 10

@@ -7,13 +7,9 @@ from skill.handlers.handler import Handler
 
 
 class TripGameHandler(Handler):
-    async def get_user_data(self, user_id):
-        data = await self.dispatcher.storage.get_data(user_id)
-        return data
-
     async def quiz_process_handle(self, alice_request):
         user_id = alice_request.session.user_id
-        user_data = await self.get_user_data(user_id)
+        user_data = await self.dispatcher.storage.get_data(user_id)
         payload = alice_request.request.payload or {}
         if payload.get('right') is not False:
             questions = user_data.get('trip_game_questions')
@@ -40,7 +36,7 @@ class TripGameHandler(Handler):
 
     async def excursion_process_handle(self, alice_request):
         user_id = alice_request.session.user_id
-        user_data = await self.get_user_data(user_id)
+        user_data = await self.dispatcher.storage.get_data(user_id)
         locations = user_data.get('trip_game_locations')
         if locations is None:
             locations = await get_random_locations()

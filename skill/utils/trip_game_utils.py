@@ -11,7 +11,7 @@ async def get_random_questions():
         data = list(json.load(f).items())
 
     results = []
-    right_answers = random.sample(data, k=5)
+    right_answers = random.sample(data, k=settings.TRIP_GAME_QUESTIONS)
     for category, variables in right_answers:
         answer = random.choice(variables)
         wrong_variables = []

@@ -19,3 +19,4 @@ class AntonymsGameStates(Helper):
     mode = HelperMode.snake_case
 
     ANTONYMS_GAME = Item()
+    ANTONYMS_GAME_END = Item()

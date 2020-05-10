@@ -80,6 +80,6 @@ class MainMenuHandler(Handler):
         )
         self.dispatcher.register_request_handler(
             self.handle_select_antonyms_game,
-            state=[MainMenuStates.SELECT_GAME,],
+            state=[MainMenuStates.SELECT_GAME, AntonymsGameStates.ANTONYMS_GAME_END],
             contains=self.ANTONYMS_GAME_SELECT_KEYWORDS
         )
