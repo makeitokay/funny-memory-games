@@ -3,16 +3,30 @@ import random
 
 class SpeechText:
     def __init__(self, text, tts=None):
+        if len(text) > 1024:
+            raise ValueError('Length of text cannot be more than 1024 symbols.')
         self.text = text
-        self.tts = tts
-        if self.tts is None:
+        if tts is None:
             self.tts = self.text
+        else:
+            if len(tts) > 1024:
+                raise ValueError('Length of tts cannot be more than 1024 symbols.')
+            self.tts = tts
 
     def add_sound(self, sound):
         sound_wrapper = f"<speaker audio='{sound}'>"
         if len(self.tts + sound_wrapper) > 1024:
             raise ValueError('It impossible to add this sound because of size of tts attribute.')
         self.tts = sound_wrapper + self.tts
+
+    def __add__(self, other):
+        if isinstance(other, str):
+            return SpeechText(self.text + other, self.tts + other)
+        if isinstance(other, SpeechText):
+            return SpeechText(self.text + other.text, self.tts + other.tts)
+        raise TypeError(
+            f'Can only concatenate str or SpeechText (not "{other.__class__.__name__}") to SpeechText'
+        )
 
 
 _TEXT_VARIABLES = {
@@ -103,21 +117,21 @@ ANTONYMS_GAME_START = '''
 Начинаем?
 '''
 
-ANTONYMS_RIGHT_ANSWER = '''
-{ok}.'''
+ANTONYMS_RIGHT_ANSWER = SpeechText('''
+{ok}.''')
 
 ANTONYM_WRONG_ANSWER = '''
 Нет, это неправильный ответ. Попробуй еще раз :) Если не знаешь, скажи «Не знаю».
 '''
 
-ANTONYM_DONT_KNOW = '''
+ANTONYM_DONT_KNOW = SpeechText('''
 Ничего страшного. Запомни: «{question}» - «{answer}».
-'''
+''')
 
-ANTONYM_NEXT_WORD = '''
+ANTONYM_NEXT_WORD = SpeechText('''
 {try_word}:
 {next_question}
-'''
+''')
 
 ANTONYMS_GAME_END = SpeechText('''
 Ты молодец! На этом наша игра закончилась. Хочешь попробовать еще раз или вернуться в главное меню?

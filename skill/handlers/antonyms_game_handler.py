@@ -37,7 +37,7 @@ class AntonymsGameHandler(Handler):
                 )
             await self.dispatcher.storage.update_data(user_id, antonyms_game_tip_used=False)
             return alice_request.response(
-                d(ANTONYMS_RIGHT_ANSWER + ANTONYM_NEXT_WORD, next_question=question),
+                d(ANTONYMS_RIGHT_ANSWER + ANTONYM_NEXT_WORD, next_question=question).text,
                 buttons=['Подсказка']
             )
 
@@ -61,7 +61,7 @@ class AntonymsGameHandler(Handler):
         current_question = questions.current
         next_question = await self.get_next_question(questions)
         if next_question is None:
-            text = d(ANTONYM_DONT_KNOW + ANTONYMS_GAME_END.text,
+            text = d(ANTONYM_DONT_KNOW + ANTONYMS_GAME_END,
                      question=current_question[0],
                      answer=current_question[1])
             return alice_request.response(
@@ -75,7 +75,7 @@ class AntonymsGameHandler(Handler):
             d(ANTONYM_DONT_KNOW + ANTONYM_NEXT_WORD,
               question=current_question[0],
               answer=current_question[1],
-              next_question=next_question),
+              next_question=next_question).text,
             buttons=['Подсказка']
         )
 
