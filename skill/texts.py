@@ -119,9 +119,10 @@ ANTONYM_NEXT_WORD = '''
 {next_question}
 '''
 
-ANTONYMS_GAME_END = '''
+ANTONYMS_GAME_END = SpeechText('''
 Ты молодец! На этом наша игра закончилась. Хочешь попробовать еще раз или вернуться в главное меню?
-'''
+''')
+ANTONYMS_GAME_END.add_sound('alice-sounds-game-win-2.opus')
 
 ANTONYMS_TIP_ALREADY_USED = '''
 Подсказка уже использована. Если не знаешь ответ, скажи «Не знаю».
