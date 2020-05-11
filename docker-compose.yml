@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/funny-memory-games
+  nginx:
+    image: library/nginx:latest
+    depends_on:
+      - web
+    ports:
+      - 3001:3001
+    volumes:
+      - .:/funny-memory-games
+      - ./config/nginx:/etc/nginx/conf.d

@@ -3,7 +3,7 @@ import os
 from skill.handlers import LoggingHandler, MainMenuHandler, ErrorHandler, UnknownCommandHandler, TripGameHandler, AntonymsGameHandler
 
 WEBHOOK_URL_PATH = '/webhook/'
-WEBAPP_HOST = 'localhost'
+WEBAPP_HOST = '0.0.0.0'
 WEBAPP_PORT = 3001
 
 HANDLERS = [
