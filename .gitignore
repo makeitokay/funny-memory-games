@@ -133,3 +133,6 @@ skill/logs
 
 # IDE files
 .idea
+
+# SSL certificates
+data/certs
