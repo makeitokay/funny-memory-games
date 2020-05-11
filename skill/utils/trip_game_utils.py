@@ -4,6 +4,7 @@ import random
 from aioalice.types import Button
 
 from skill import settings
+from skill.utils.question_set import QuestionSet
 
 
 async def get_random_questions():
@@ -24,15 +25,12 @@ async def get_random_questions():
                 wrong_answer = random.choice(wrong_items[1])
             wrong_variables.append((wrong_items[0], wrong_answer))
         results.append((wrong_variables, (category, answer)))
-    return iter(results)
+    return QuestionSet(results)
 
 
 async def generate_answers_suggests(variables, right_answer):
-    buttons = [
-        Button(name, payload={"category": category, "right": False})
-        for category, name in variables
-    ]
-    buttons.append(Button(right_answer[1], payload={"category": right_answer[0], "right": True}))
+    buttons = [Button(name) for category, name in variables]
+    buttons.append(Button(right_answer[1]))
     random.shuffle(buttons)
     return buttons
 

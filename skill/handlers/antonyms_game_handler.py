@@ -5,6 +5,7 @@ from skill.states import AntonymsGameStates
 from skill.texts import get_dynamic_text as d, ANTONYMS_GAME_END, ANTONYMS_RIGHT_ANSWER, ANTONYM_WRONG_ANSWER, \
     ANTONYM_DONT_KNOW, ANTONYM_NEXT_WORD, ANTONYMS_TIP_ALREADY_USED
 from skill.utils.antonyms_game_utils import get_random_antonyms, get_tip_for_question
+from skill.utils.utils import get_original_utterance
 
 
 class AntonymsGameHandler(Handler):
@@ -18,7 +19,7 @@ class AntonymsGameHandler(Handler):
         user_id = alice_request.session.user_id
         user_data = await self.dispatcher.storage.get_data(user_id)
         questions = user_data.get('antonyms_game_questions')
-        answer = alice_request.request.command.lower().replace('ё', 'е')
+        answer = get_original_utterance(alice_request)
 
         if questions is None:
             questions = await get_random_antonyms()
