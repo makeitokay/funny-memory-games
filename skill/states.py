@@ -20,3 +20,11 @@ class AntonymsGameStates(Helper):
 
     ANTONYMS_GAME = Item()
     ANTONYMS_GAME_END = Item()
+
+
+class ProfessionsGameStates(Helper):
+    mode = HelperMode.snake_case
+
+    PROFESSIONS_CHECK_ANSWER = Item()
+    PROFESSIONS_GO_NEXT = Item()
+    PROFESSIONS_GAME_END = Item()

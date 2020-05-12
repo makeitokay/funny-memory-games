@@ -141,3 +141,16 @@ ANTONYMS_GAME_END.add_sound('alice-sounds-game-win-2.opus')
 ANTONYMS_TIP_ALREADY_USED = '''
 Подсказка уже использована. Если не знаешь ответ, скажи «Не знаю».
 '''
+
+# Game #3 (Professions game) texts
+
+PROFESSIONS_GAME_START = '''
+{ok}. Сейчас я буду задавать тебе вопрос о профессии (например, «Кто готовит еду?»), а ты должен будешь назвать эту профессию (например, повар).
+Начинаем?
+'''
+
+PROFESSIONS_GAME_END = SpeechText('''
+Сейчас мы изучили с тобой такие профессии, как: {professions}. 
+Понравилось? Хочешь попробовать еще раз или вернуться в главное меню?
+''')
+PROFESSIONS_GAME_END.add_sound('alice-sounds-game-win-3.opus')

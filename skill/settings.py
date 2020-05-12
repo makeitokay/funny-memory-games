@@ -1,6 +1,7 @@
 import os
 
 from skill.handlers import LoggingHandler, MainMenuHandler, ErrorHandler, UnknownCommandHandler, TripGameHandler, AntonymsGameHandler
+from skill.handlers.professions_game_handler import ProfessionsGameHandler
 
 DEBUG = True
 
@@ -14,6 +15,7 @@ HANDLERS = [
     MainMenuHandler,
     TripGameHandler,
     AntonymsGameHandler,
+    ProfessionsGameHandler,
 
     ErrorHandler,
     UnknownCommandHandler,
@@ -28,3 +30,5 @@ TRIP_GAME_QUESTIONS = 5
 TRIP_EXCURSION_LOCATIONS = 5
 
 ANTONYMS_GAME_QUESTIONS = 10
+
+PROFESSIONS_GAME_QUESTIONS = 5

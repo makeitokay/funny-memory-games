@@ -1,6 +1,7 @@
-from skill.texts import get_dynamic_text as d, MAIN_MENU, CHOOSE_GAME, GREETINGS, TRIP_GAME_START, ANTONYMS_GAME_START
+from skill.texts import get_dynamic_text as d, MAIN_MENU, CHOOSE_GAME, GREETINGS, TRIP_GAME_START, ANTONYMS_GAME_START, \
+    PROFESSIONS_GAME_START
 from skill.handlers.handler import Handler
-from skill.states import MainMenuStates, TripGameStates, AntonymsGameStates
+from skill.states import MainMenuStates, TripGameStates, AntonymsGameStates, ProfessionsGameStates
 from aioalice.types import MediaButton, Image, Button
 
 
@@ -23,6 +24,7 @@ class MainMenuHandler(Handler):
     BACK_TO_MENU_KEYWORDS = ["Вернуться в меню", "Главное меню", "Другая игра", "В начало"]
     TRIP_GAME_SELECT_KEYWORDS = ["Поход"]
     ANTONYMS_GAME_SELECT_KEYWORDS = ["по-другому", "по другому", "антоним"]
+    PROFESSIONS_GAME_SELECT_KEYWORDS = ["профессия", "профессию", "профессии"]
 
     async def handle_greetings(self, alice_request):
         user_id = alice_request.session.user_id
@@ -62,6 +64,15 @@ class MainMenuHandler(Handler):
             buttons=[Button("Да!")]
         )
 
+    async def handle_select_professions_game(self, alice_request):
+        user_id = alice_request.session.user_id
+        await self.dispatcher.storage.set_state(user_id, ProfessionsGameStates.PROFESSIONS_GO_NEXT)
+        await self.dispatcher.storage.reset_data(user_id)
+        return alice_request.response(
+            d(PROFESSIONS_GAME_START),
+            buttons=[Button("Да!")]
+        )
+
     def register_handlers(self):
         self.dispatcher.register_request_handler(
             self.handle_greetings,
@@ -82,4 +93,9 @@ class MainMenuHandler(Handler):
             self.handle_select_antonyms_game,
             state=[MainMenuStates.SELECT_GAME, AntonymsGameStates.ANTONYMS_GAME_END],
             contains=self.ANTONYMS_GAME_SELECT_KEYWORDS
+        )
+        self.dispatcher.register_request_handler(
+            self.handle_select_professions_game,
+            state=[MainMenuStates.SELECT_GAME, ProfessionsGameStates.PROFESSIONS_GAME_END],
+            contains=self.PROFESSIONS_GAME_SELECT_KEYWORDS
         )
