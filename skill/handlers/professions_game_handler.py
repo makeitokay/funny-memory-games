@@ -16,6 +16,7 @@ class ProfessionsGameHandler(Handler):
         if questions.current['name'].lower() in answer and answer != "не знаю":
             text = "Правильно!"
 
+        suggests = ['Идём дальше!']
         await self.dispatcher.storage.set_state(user_id, ProfessionsGameStates.PROFESSIONS_GO_NEXT)
         current = questions.current
         if current.get('image') is not None:
@@ -24,7 +25,7 @@ class ProfessionsGameHandler(Handler):
                 image_id=current['image'],
                 title=current['name'],
                 description=current['description'],
-                buttons=["Идём дальше!"]
+                buttons=suggests
             )
 
     async def go_next_handle(self, alice_request):
@@ -41,16 +42,18 @@ class ProfessionsGameHandler(Handler):
         except StopIteration:
             await self.dispatcher.storage.set_state(user_id, ProfessionsGameStates.PROFESSIONS_GAME_END)
             professions = ", ".join([p['name'].lower() for p in questions.saved])
+            suggests = ['Хочу отгадывать профессии!', "Главное меню"]
             text = d(PROFESSIONS_GAME_END, professions=professions)
             return alice_request.response(
                 text.text,
-                buttons=['Хочу отгадывать профессии!', "Главное меню"],
+                buttons=suggests,
                 tts=text.tts
             )
+        suggests = ['Не знаю']
         await self.dispatcher.storage.set_state(user_id, ProfessionsGameStates.PROFESSIONS_CHECK_ANSWER)
         return alice_request.response(
             f"Кто {question['question']}?",
-            buttons=['Не знаю']
+            buttons=suggests
         )
 
     def register_handlers(self):

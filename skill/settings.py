@@ -1,6 +1,7 @@
 import os
 
 from skill.handlers import LoggingHandler, MainMenuHandler, ErrorHandler, UnknownCommandHandler, TripGameHandler, AntonymsGameHandler
+from skill.handlers.help_handler import HelpHandler
 from skill.handlers.professions_game_handler import ProfessionsGameHandler
 
 DEBUG = True
@@ -11,6 +12,7 @@ WEBAPP_PORT = 3001
 
 HANDLERS = [
     LoggingHandler,
+    HelpHandler,
 
     MainMenuHandler,
     TripGameHandler,

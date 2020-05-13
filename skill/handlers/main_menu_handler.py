@@ -26,6 +26,8 @@ class MainMenuHandler(Handler):
     ANTONYMS_GAME_SELECT_KEYWORDS = ["по-другому", "по другому", "антоним"]
     PROFESSIONS_GAME_SELECT_KEYWORDS = ["профессия", "профессию", "профессии"]
 
+    ARE_YOU_READY_SUGGESTS = ['Да!']
+
     async def handle_greetings(self, alice_request):
         user_id = alice_request.session.user_id
         await self.dispatcher.storage.set_state(user_id, MainMenuStates.SELECT_GAME)
@@ -52,7 +54,7 @@ class MainMenuHandler(Handler):
         await self.dispatcher.storage.reset_data(user_id)
         return alice_request.response(
             d(TRIP_GAME_START),
-            buttons=[Button("Да!")]
+            buttons=self.ARE_YOU_READY_SUGGESTS
         )
 
     async def handle_select_antonyms_game(self, alice_request):
@@ -61,7 +63,7 @@ class MainMenuHandler(Handler):
         await self.dispatcher.storage.reset_data(user_id)
         return alice_request.response(
             d(ANTONYMS_GAME_START),
-            buttons=[Button("Да!")]
+            buttons=self.ARE_YOU_READY_SUGGESTS
         )
 
     async def handle_select_professions_game(self, alice_request):
@@ -70,7 +72,7 @@ class MainMenuHandler(Handler):
         await self.dispatcher.storage.reset_data(user_id)
         return alice_request.response(
             d(PROFESSIONS_GAME_START),
-            buttons=[Button("Да!")]
+            buttons=self.ARE_YOU_READY_SUGGESTS
         )
 
     def register_handlers(self):

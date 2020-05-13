@@ -22,14 +22,18 @@ class TripGameHandler(Handler):
                 wrong_variables, right_answer = next(questions)
             except StopIteration:
                 await self.dispatcher.storage.set_state(user_id, TripGameStates.TRIP_GAME_EXCURSION)
-                return alice_request.response(TRIP_QUIZ_FINISH, buttons=['Да!'])
+                suggests = ['Да!']
+                await self.save_suggests(user_id, None)
+                return alice_request.response(TRIP_QUIZ_FINISH, buttons=suggests)
             suggests = await generate_answers_suggests(wrong_variables, right_answer)
+            await self.save_suggests(user_id, suggests)
             return alice_request.response(
                 d(TRIP_GAME_CHOOSE_THING, category=right_answer[0]),
                 buttons=suggests
             )
         wrong_variables, right_answer = questions.current
         suggests = await generate_answers_suggests(wrong_variables, right_answer)
+        await self.save_suggests(user_id, suggests)
 
         # Find category of word that user said
         for variable in wrong_variables:
@@ -55,22 +59,24 @@ class TripGameHandler(Handler):
             current_location = next(locations)
         except StopIteration:
             await self.dispatcher.storage.set_state(user_id, TripGameStates.TRIP_GAME_END)
+            suggests = ['Хочу в поход!', 'Главное меню']
             return alice_request.response(
                 TRIP_GAME_END.text,
                 tts=TRIP_GAME_END.tts,
-                buttons=['Хочу в поход!', 'Главное меню']
+                buttons=suggests
             )
 
         text = SpeechText(current_location['text'])
         text.add_sound(current_location['sound'])
 
+        suggests = ["Идём дальше!"]
         return alice_request.response_big_image(
             text=text.text,
             tts=text.tts,
             image_id=current_location['image'],
             title=current_location['name'],
             description=current_location['text'],
-            buttons=["Идём дальше!"]
+            buttons=suggests
         )
 
     def register_handlers(self):

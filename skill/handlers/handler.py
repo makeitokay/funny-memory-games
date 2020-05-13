@@ -8,6 +8,9 @@ class Handler(ABC):
         self.dispatcher = dispatcher
         self.logger = Logger()
 
+    async def save_suggests(self, user_id, suggests):
+        return await self.dispatcher.storage.update_data(user_id, last_suggests=suggests)
+
     @abstractmethod
     def register_handlers(self):
         pass
