@@ -28,5 +28,35 @@
     "text": "Мы встретили слонят!",
     "sound": "alice-sounds-animals-elephant-1.opus",
     "image": "965417/5ba3de46887e35d17966"
+  },
+  {
+    "name": "Ворона",
+    "text": "Эти звуки издает ворона!",
+    "sound": "alice-sounds-animals-crow-1.opus",
+    "image": "937455/58aedecfd64bc40fbe76"
+  },
+  {
+    "name": "Лев",
+    "text": "Ой, а туда лучше не ходить - это лев рычит!",
+    "sound": "alice-sounds-animals-lion-1.opus",
+    "image": "213044/5e0073272034a25121d2"
+  },
+  {
+    "name": "Обезьяна",
+    "text": "Где-то недалеко сидит обезьянка :)",
+    "sound": "alice-sounds-animals-monkey-1.opus",
+    "image": "965417/c9dbf5d98755bee92ae5"
+  },
+  {
+    "name": "Овцы",
+    "text": "Это же овечки!",
+    "sound": "alice-sounds-animals-sheep-2.opus",
+    "image": "1030494/4b378dd6d654d3bc03de"
+  },
+  {
+    "name": "Водопад",
+    "text": "Смотри, как красиво - это водопад!",
+    "sound": "dialogs-upload/dd4fde03-854f-4cd1-b446-03f3d99b39e0/09196ac4-e67c-4f71-ac16-e1603691b331.opus",
+    "image": "1030494/f2b4ddab8618028cc8c7"
   }
 ]
