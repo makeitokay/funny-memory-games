@@ -32,631 +32,67 @@
   {
     "name": "Программист",
     "question": "создает программы",
-    "image": null,
+    "image": "1030494/d5b8546c90a116119607",
     "description": "Программист создает программы для компьютера и не только. Он хорошо знает математику и информатику, обладает хорошым терпением, имеет особый склад ума, доводит дело до конца."
   },
   {
     "name": "Охранник",
     "question": "охраняет людей и имущество",
-    "image": null,
+    "image": "1540737/a4360eaba4b14346d2e0",
     "description": "Охранник обеспечивает безопасность людей и объектов. Охранник должен быть сильным, выносливым человеком. Его работа связана с опасностями и рисками."
   },
   {
     "name": "Химик",
     "question": "умеет превращать одно вещество в другое",
-    "image": null,
+    "image": "213044/5d0f407993e64e0c69c2",
     "description": "Химик работает и изучает различные вещества. Например, вода, соль, сахар - это вещества. Химик изучает их строение, состав, свойства."
   },
   {
     "name": "Токарь",
     "question": "придает различным изделиям нужную форму, работая на специальном станке",
-    "image": null,
+    "image": "997614/85359cf27e9e84253c33",
     "description": "У токаря есть специальный токарный станок, на котором он работает - придает различным изделиям нужную форму. Он работает с деревом, железом, стеклом и так далее."
   },
   {
     "name": "Сантехник",
     "question": "чинит трубы и батареи в доме",
-    "image": null,
+    "image": "1540737/8873825187802e06b33d",
     "description": "Сантехник занимается ремонтом и обслуживанием такого оборудования, как, например, трубы, батареи в наших домах. Сантехник должен быть внимательным и аккуратным человеком."
   },
   {
     "name": "Электрик",
     "question": "чинит провода и монтирует розетки",
-    "image": null,
+    "image": "213044/856e431721e9b754c8ab",
     "description": "Вся техника (телевизоры, компьютеры, холодильники) питается от электричества. Электрик занимается ремонтом и обслуживанием электричества в нашем доме. Его труд связан с риском, ведь при работе с электричеством есть шанс получить удар током."
   },
   {
     "name": "Продавец",
     "question": "продает различные товары в магазине",
-    "image": null,
+    "image": "213044/bed7f4d499afa29dc8dd",
     "description": "Продавцов бывает много: кто-то продает непродовольственные товары (одежда, обувь, мебель), кто-то - продовольственные (овощи, фрукты, другие продукты). Продавец умеет хорошо общаться с людьми."
   },
   {
     "name": "Пилот",
     "question": "управляет пассажирским самолетом",
-    "image": null,
+    "image": "1030494/450dd1a4509d81c08391",
     "description": "Пилот - очень ответственная профессия. Есть разные пилоты: кто-то управляет самолетом, кто-то вертолетом или даже космическим кораблем! Чтобы стать пилотом, нужно быть ответственным и смелым человеком."
   },
   {
     "name": "Кондитер",
     "question": "готовит печеньки, булочки, сладости",
-    "image": null,
+    "image": "213044/9ddecdd4e0dcf5806ad7",
     "description": "Кондитер придумывает и создает различные сладости своими руками. Печенье, пирожки, пирожные, конфеты - все это дело рук кондитера. Помни: много сладкого есть нельзя - всего хорошего в меру :)"
   },
   {
     "name": "Танцор",
     "question": "лучше всех выполняет ритмические движения под музыку",
-    "image": null,
+    "image": "1030494/09a0a5f22457ed2f79f3",
     "description": "Танцор - творческий человек. Он прекрасно двигается под музыку, целеустремлен, вынослив."
   },
   {
     "name": "Ученый",
     "question": "исследует и изучает различные аспекты нашего мира, стремится к новым знаниям, открытиям, достижениям",
-    "image": null,
+    "image": "965417/96745e76d9464008012b",
     "description": "Ученые - это химики, физики, математики, биологи и так далее. Они очень образованны, умны, обладают логическим мышлением."
-  },
-  {
-    "name": "Циркач",
-    "question": "устраивает цирковые представления",
-    "image": null,
-    "description": "Циркач всегда в центре циркового представления. Он может показывать различные трюки, фокусы. Циркачи очень смелые, физически сильные люди."
-  },
-  {
-    "name": "Инспектор",
-    "question": "следит за соблюдением правил дорожного движения на дороге",
-    "image": null,
-    "description": "На дороге есть множество правил, которые должен соблюдать каждый участник движения. Инспектор дорожного движения следит за тем, как эти правила соблюдаются. Он может проверять документы, выписывать штрафы."
-  },
-  {
-    "name": "Шахтер",
-    "question": "добывает полезные ископаемые в шахте",
-    "image": null,
-    "description": "Золото, алмазы, серебро, медь, железо, уголь - всё это полезные ископаемые, добычей которых занимается шахтёр глубоко под землей. Это одна из самых опасных профессий."
-  },
-  {
-    "name": "Пожарный",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Экскурсовод",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Лесоруб",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Рыболов",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Космонавт",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Телеведущий",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Лесник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Музыкант",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Официант",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Строитель",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Оператор",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Сварщик",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Фотомодель",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Таксист",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Печатник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Пчеловод",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Художник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Слесарь",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Учитель",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Моряк",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Мясник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Садовод",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Няня",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Экономист",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Дрессировщик",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Историк",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Воспитатель",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Дворник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Иллюзионист",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Физик",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Фигурист",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Дизайнер",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Живописец",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Актер",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Фотограф",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Ботаник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Почтальон",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Математик",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Лодочник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Кондуктор",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Врач",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Предприниматель",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Биолог",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Композитор",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Полицейский",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Ветеринар",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Товаровед",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Окулист",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Охотник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Бухгалтер",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Библиотекарь",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Фармацевт",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Скульптор",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Поэт",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Журналист",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Хореограф",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Гример",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Фасовщик",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Судья",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Милиционер",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Геолог",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Столяр",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Стоматолог",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Пограничник",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Грузчик",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Певец",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Маляр",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Швея",
-    "question": null,
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Парикмахер",
-    "question": "стрегет людей",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Архитектор",
-    "question": "занимается ",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Кассир",
-    "question": "работает в магазине на кассе",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Юморист",
-    "question": "смешит людей",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Тракторист",
-    "question": "ездиет на тракторе",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Агроном",
-    "question": "изучает выращивание растений",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Водитель",
-    "question": "управляет машиной",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Механик",
-    "question": "ремонтирует машины",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Переводчик",
-    "question": "помогает людям, неговорящим на одном языке, понимамать друг друга",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Цветовод",
-    "question": "выращивает цветы",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Астроном",
-    "question": "наблюдает за звездным небом",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Жонглер",
-    "question": "работает в цирке и кидает над собой предметы",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Балерина",
-    "question": "работает в балете",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Писатель",
-    "question": "пишет книги",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Инженер",
-    "question": "превращает науку в жизнь",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Банкир",
-    "question": "работает в банке",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Летчик",
-    "question": "летает на самолете",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Логопед",
-    "question": "занимается с людьми, которые плохо выговаривают звуки",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Кузнец",
-    "question": "изготавливает мечи",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Машинист",
-    "question": "управляет поездом",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Повар",
-    "question": "готовит еду",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Юрист",
-    "question": "занимается правами человека",
-    "image": null,
-    "description": null
-  },
-  {
-    "name": "Фокусник",
-    "question": "показывает фокусы",
-    "image": null,
-    "description": null
   }
 ]
