@@ -1,3 +1,5 @@
+from aioalice.types import Image
+
 from skill.handlers.handler import Handler
 from skill.states import ProfessionsGameStates
 from skill.texts import get_dynamic_text as d, PROFESSIONS_GAME_END
@@ -14,7 +16,7 @@ class ProfessionsGameHandler(Handler):
 
         text = "Запомни: "
         if questions.current['name'].lower() in answer and answer != "не знаю":
-            text = "Правильно!"
+            text = "Правильно! "
 
         suggests = ['Идём дальше!']
         await self.dispatcher.storage.set_state(user_id, ProfessionsGameStates.PROFESSIONS_GO_NEXT)
@@ -27,6 +29,18 @@ class ProfessionsGameHandler(Handler):
                 description=current['description'],
                 buttons=suggests
             )
+        return alice_request.response_items_list(
+            text=text + current['description'],
+            header=None,
+            items=[
+                Image(
+                    image_id=None,
+                    title=current['name'],
+                    description=current['description']
+                )
+            ],
+            buttons=suggests
+        )
 
     async def go_next_handle(self, alice_request):
         user_id = alice_request.session.user_id
