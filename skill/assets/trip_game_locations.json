@@ -58,5 +58,23 @@
     "text": "Смотри, как красиво - это водопад!",
     "sound": "dialogs-upload/dd4fde03-854f-4cd1-b446-03f3d99b39e0/09196ac4-e67c-4f71-ac16-e1603691b331.opus",
     "image": "1030494/f2b4ddab8618028cc8c7"
+  },
+  {
+    "name": "Волк",
+    "text": "Туда ходить опасно - это волк!",
+    "sound": "alice-sounds-animals-wolf-1.opus",
+    "image": "1652229/122247287c6e1ef5d4a9"
+  },
+  {
+    "name": "Корова",
+    "text": "Слышишь? Это корова!",
+    "sound": "alice-sounds-animals-cow-1.opus",
+    "image": "965417/974d5e258bc40c4a44b8"
+  },
+  {
+    "name": "Дятел",
+    "text": "А это дятел стучит по дереву!",
+    "sound": "dialogs-upload/dd4fde03-854f-4cd1-b446-03f3d99b39e0/d202d5b1-8891-45fa-a14b-adb1fea428f7.opus",
+    "image": "1540737/8b0f380eb9c5d2d41554"
   }
 ]
