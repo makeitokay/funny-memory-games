@@ -1,5 +1,6 @@
+import logging
+import logging.handlers
 import os
-import logging, logging.handlers
 
 from skill import settings
 
@@ -9,11 +10,13 @@ class Logger:
         self._logger = logging.getLogger(settings.LOGGER_NAME)
         self._logger.setLevel(logging.DEBUG)
         if not self._logger.handlers:
-            filename = os.path.join(settings.LOGGING_PATH, f'{settings.LOGGER_NAME}.log')
-            handler = logging.handlers.TimedRotatingFileHandler(
-                filename, when='midnight', backupCount=15
+            filename = os.path.join(
+                settings.LOGGING_PATH, f"{settings.LOGGER_NAME}.log"
             )
-            formatter = logging.Formatter(u'[%(asctime)s]  %(message)s')
+            handler = logging.handlers.TimedRotatingFileHandler(
+                filename, when="midnight", backupCount=15
+            )
+            formatter = logging.Formatter("[%(asctime)s]  %(message)s")
             handler.setFormatter(formatter)
             handler.setLevel(logging.DEBUG)
             self._logger.addHandler(handler)

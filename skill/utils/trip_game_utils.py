@@ -8,7 +8,7 @@ from skill.utils.question_set import QuestionSet
 
 
 async def get_random_questions():
-    with open('skill/assets/trip_game_words.json', encoding='utf-8') as f:
+    with open("skill/assets/trip_game_words.json", encoding="utf-8") as f:
         data = list(json.load(f).items())
 
     results = []
@@ -36,7 +36,7 @@ async def generate_answers_suggests(variables, right_answer):
 
 
 async def get_random_locations():
-    with open('skill/assets/trip_game_locations.json', encoding='utf-8') as f:
+    with open("skill/assets/trip_game_locations.json", encoding="utf-8") as f:
         data = list(json.load(f))
     # data[0] is forest location. It is the first location by default
     result = [data[0]]
@@ -46,4 +46,3 @@ async def get_random_locations():
             random_location = random.choice(data)
         result.append(random_location)
     return iter(result)
-
