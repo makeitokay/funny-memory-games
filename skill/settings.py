@@ -10,6 +10,8 @@ WEBHOOK_URL_PATH = '/webhook/'
 WEBAPP_HOST = '0.0.0.0'
 WEBAPP_PORT = 3001
 
+STRESS_TEST_URL_PATH = '/stresstest/'
+
 HANDLERS = [
     LoggingHandler,
     HelpHandler,
