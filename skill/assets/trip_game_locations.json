@@ -76,5 +76,17 @@
     "text": "А это дятел стучит по дереву!",
     "sound": "dialogs-upload/dd4fde03-854f-4cd1-b446-03f3d99b39e0/d202d5b1-8891-45fa-a14b-adb1fea428f7.opus",
     "image": "1540737/8b0f380eb9c5d2d41554"
+  },
+  {
+    "name": "Утка",
+    "text": "В озере неподалеку плавает уточка :)",
+    "sound": "dialogs-upload/dd4fde03-854f-4cd1-b446-03f3d99b39e0/71f26813-c19b-494d-a559-8636365d3cf1.opus",
+    "image": "1030494/ab4ce80278845474715e"
+  },
+    {
+    "name": "Коза",
+    "text": "Кажется, это коза!",
+    "sound": "dialogs-upload/dd4fde03-854f-4cd1-b446-03f3d99b39e0/a472d288-6870-4faf-9784-29e6b7aaa4d7.opus",
+    "image": "965417/77dc3957235d29271f22"
   }
 ]

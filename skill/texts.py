@@ -152,8 +152,7 @@ ANTONYM_DONT_KNOW = SpeechText(
 
 ANTONYM_NEXT_WORD = SpeechText(
     """
-{try_word}:
-{next_question}
+{try_word}: {next_question}
 """
 )
 
